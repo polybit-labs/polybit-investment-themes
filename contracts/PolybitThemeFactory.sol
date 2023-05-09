@@ -68,7 +68,6 @@ contract PolybitThemeFactory {
         address _themeContractAddress;
         string _productCategory;
         string _productDimension;
-        uint256 _entryFee;
     }
 
     /**
@@ -82,7 +81,7 @@ contract PolybitThemeFactory {
         (
             productParams._productCategory,
             productParams._productDimension,
-            productParams._entryFee
+
         ) = polybitThemeConfig.getThemeProductInfo(createParams._productId);
 
         PolybitTheme(payable(productParams._themeContractAddress)).init{
@@ -95,7 +94,6 @@ contract PolybitThemeFactory {
             createParams._productId,
             productParams._productCategory,
             productParams._productDimension,
-            productParams._entryFee,
             createParams._orderData,
             createParams._lockTimestamp
         );

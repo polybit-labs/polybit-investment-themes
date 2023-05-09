@@ -693,11 +693,10 @@ def main():
         print(tx.events[i])
     print("Fee Address", polybit_theme_config.getFeeAddress())
 
-    """ tx = polybit_theme_config.createInvestmentTheme(
+    tx = polybit_theme_config.createInvestmentTheme(
         5610001000,
         "BSC Index Top 10",
         "Market Cap",
-        50,
         {"from": polybit_owner_account},
     )
     tx.wait(1)
@@ -708,7 +707,6 @@ def main():
         5610001001,
         "BSC Index Top 10",
         "Liquidity",
-        50,
         {"from": polybit_owner_account},
     )
     tx.wait(1)
@@ -719,7 +717,6 @@ def main():
         5610001002,
         "BSC Index Top 10",
         "Equally Balanced",
-        50,
         {"from": polybit_owner_account},
     )
     tx.wait(1)
@@ -727,14 +724,14 @@ def main():
         print(tx.events[i])
 
     tx = polybit_theme_config.createInvestmentTheme(
-        5610011000, "DeFi", "Market Cap", 50, {"from": polybit_owner_account}
+        5610011000, "DeFi", "Market Cap", {"from": polybit_owner_account}
     )
     tx.wait(1)
     for i in range(0, len(tx.events)):
         print(tx.events[i])
 
     tx = polybit_theme_config.createInvestmentTheme(
-        5610011001, "DeFi", "Liquidity", 50, {"from": polybit_owner_account}
+        5610011001, "DeFi", "Liquidity", {"from": polybit_owner_account}
     )
     tx.wait(1)
 
@@ -742,21 +739,21 @@ def main():
         print(tx.events[i])
 
     tx = polybit_theme_config.createInvestmentTheme(
-        5610011002, "DeFi", "Equally Balanced", 50, {"from": polybit_owner_account}
+        5610011002, "DeFi", "Equally Balanced", {"from": polybit_owner_account}
     )
     tx.wait(1)
     for i in range(0, len(tx.events)):
         print(tx.events[i])
 
     tx = polybit_theme_config.createInvestmentTheme(
-        5610021000, "Metaverse", "Market Cap", 50, {"from": polybit_owner_account}
+        5610021000, "Metaverse", "Market Cap", {"from": polybit_owner_account}
     )
     tx.wait(1)
     for i in range(0, len(tx.events)):
         print(tx.events[i])
 
     tx = polybit_theme_config.createInvestmentTheme(
-        5610021001, "Metaverse", "Liquidity", 50, {"from": polybit_owner_account}
+        5610021001, "Metaverse", "Liquidity", {"from": polybit_owner_account}
     )
     tx.wait(1)
     for i in range(0, len(tx.events)):
@@ -766,7 +763,6 @@ def main():
         5610021002,
         "Metaverse",
         "Equally Balanced",
-        50,
         {"from": polybit_owner_account},
     )
     tx.wait(1)
@@ -774,24 +770,23 @@ def main():
         print(tx.events[i])
 
     tx = polybit_theme_config.createInvestmentTheme(
-        5610031000, "Governance", "Market Cap", 50, {"from": polybit_owner_account}
+        5610031000, "Governance", "Market Cap", {"from": polybit_owner_account}
     )
     tx.wait(1)
     for i in range(0, len(tx.events)):
         print(tx.events[i])
 
     tx = polybit_theme_config.createInvestmentTheme(
-        5610031001, "Governance", "Liquidity", 50, {"from": polybit_owner_account}
+        5610031001, "Governance", "Liquidity", {"from": polybit_owner_account}
     )
     tx.wait(1)
     for i in range(0, len(tx.events)):
-        print(tx.events[i]) """
+        print(tx.events[i])
 
     tx = polybit_theme_config.createInvestmentTheme(
         5610031002,
         "Governance",
         "Equally Balanced",
-        50,
         {"from": polybit_owner_account},
     )
     tx.wait(1)
@@ -873,6 +868,14 @@ def main():
     print(polybit_theme_factory.address)
 
     ##
+    # Deploy Multicall
+    ##
+    polybit_multicall = deploy_multicall.main(
+        polybit_owner_account,
+        polybit_theme_config.address,
+    )
+
+    ##
     # First Establish/Deposit combo
     ##
 
@@ -936,14 +939,7 @@ def main():
     )
     print("Deposits", theme.getDeposits())
     print("Total Deposits", theme.getTotalDeposited())
-
-    ##
-    # Deploy Multicall
-    ##
-    polybit_multicall = deploy_multicall.main(
-        polybit_owner_account,
-        polybit_theme_config.address,
-    )
+    """
 
     print(
         "multicall - wallet owner",
@@ -989,7 +985,7 @@ def main():
         polybit_multicall.getAllTokenBalancesInWeth(
             theme.address, owned_assets, owned_assets_prices
         ),
-    )
+    ) """
 
     """ ##
     # Print Contract Info for Export

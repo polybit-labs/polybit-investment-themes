@@ -80,41 +80,32 @@ contract PolybitThemeConfig {
         uint256 productId;
         string category;
         string dimension;
-        uint256 entryFee;
     }
 
     mapping(uint256 => string) internal productCategory;
     mapping(uint256 => string) internal productDimension;
-    mapping(uint256 => uint256) internal productEntryFee;
 
     ThemeProductParameters[] Themes;
 
     function createInvestmentTheme(
         uint256 _productId,
         string memory _category,
-        string memory _dimension,
-        uint256 _entryFee
+        string memory _dimension
     ) external onlyPolybitOwner {
         ThemeProductParameters memory Theme = ThemeProductParameters(
             _productId,
             _category,
-            _dimension,
-            _entryFee
+            _dimension
         );
         Themes.push(Theme);
         productCategory[_productId] = _category;
         productDimension[_productId] = _dimension;
-        productEntryFee[_productId] = _entryFee;
     }
 
     function getThemeProductInfo(
         uint256 _productId
-    ) external view returns (string memory, string memory, uint256) {
-        return (
-            productCategory[_productId],
-            productDimension[_productId],
-            productEntryFee[_productId]
-        );
+    ) external view returns (string memory, string memory) {
+        return (productCategory[_productId], productDimension[_productId]);
     }
 
     event FeeSetter(string message, address newFeeAddress);
@@ -130,6 +121,18 @@ contract PolybitThemeConfig {
 
     function getFeeAddress() external view returns (address) {
         return feeAddress;
+    }
+
+    event FeeSet(string message, uint256 entryFee);
+
+    function setEntryFee(uint256 _entryFee) external onlyPolybitOwner {
+        require(_entryFee <= 100, ("PolybitThemeConfig: ENTRY_FEE_INVALID"));
+        emit FeeSet("Entry Fee changed", _entryFee);
+        entryFee = _entryFee;
+    }
+
+    function getFee() external view returns (uint256) {
+        return entryFee;
     }
 
     function getWethAddress() external view returns (address) {

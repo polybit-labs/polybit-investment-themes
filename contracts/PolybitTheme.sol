@@ -50,7 +50,6 @@ contract PolybitTheme {
         uint256 _productId,
         string memory _productCategory,
         string memory _productDimension,
-        uint256 _entryFee,
         SwapOrders[] memory _orderData,
         uint256 _lockTimestamp
     ) public payable {
@@ -70,7 +69,7 @@ contract PolybitTheme {
         productId = _productId;
         productCategory = _productCategory;
         productDimension = _productDimension;
-        entryFee = _entryFee;
+        entryFee = polybitThemeConfig.getFee();
         creationTimestamp = block.timestamp;
         status = 1;
         initialDeposit(_lockTimestamp, _orderData);

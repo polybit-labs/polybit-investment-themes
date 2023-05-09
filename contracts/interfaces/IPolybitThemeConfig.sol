@@ -16,5 +16,7 @@ interface IPolybitThemeConfig {
 
     function getFeeAddress() external view returns (address);
 
+    function getFee() external view returns (uint256);
+
     function getWethAddress() external view returns (address);
 }
