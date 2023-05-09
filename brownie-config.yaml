@@ -1,0 +1,81 @@
+compiler:
+  solc:
+    version: 0.8.7
+networks:
+    development:
+        weth_address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+        busd_address: "0xe9e7cea3dedca5984780bafc599bd69add087d56"
+        usdt_address: "0x55d398326f99059ff775485246999027b3197955"
+        usdc_address: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
+        pancakeswap_factory_address: "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73"
+        verify: False
+    ganache-local:
+        verify: False
+    bsc-test:
+        weth_address: "0xE188A6B87fc5964c0f340a7745a1d9CB7baA0B05"
+        busd_address: "0x1F3365d318Dc1C81777B9977F8b466fdd1614FdB"
+        usdt_address: "0xfC00cA596A25B1CfF691EA612D007AfAd5C4bC71"
+        usdc_address: "0x25Cd00ece2B3Cd1C28b1e3cbe135Ff51F7c40E9d"
+        pancakeswap_factory_address: "0x1c12836972879e62BD2350987A38577C5b1757c2"
+        verify: False
+    bsc-test-blast:
+        weth_address: "0xE188A6B87fc5964c0f340a7745a1d9CB7baA0B05"
+        busd_address: "0x1F3365d318Dc1C81777B9977F8b466fdd1614FdB"
+        usdt_address: "0xfC00cA596A25B1CfF691EA612D007AfAd5C4bC71"
+        usdc_address: "0x25Cd00ece2B3Cd1C28b1e3cbe135Ff51F7c40E9d"
+        pancakeswap_factory_address: "0x1c12836972879e62BD2350987A38577C5b1757c2"
+        verify: False
+    bsc-main:
+        weth_address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+        busd_address: "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+        usdt_address: "0x55d398326f99059fF775485246999027B3197955"
+        usdc_address: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+        polybit_swap_router: "0x445720A49A1558c5ea463E69Ec8FB108DdaB80A8"
+        polybit_liquid_path": "0x31Fa516E3451944c3707efA963e9ADfC58844d09"
+        pancakeswap_factory_address: "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73"
+        verify: False    
+    bsc-main-fork:
+        weth_address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+        busd_address: "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+        usdt_address: "0x55d398326f99059fF775485246999027B3197955"
+        usdc_address: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+        polybit_swap_router: "0x445720A49A1558c5ea463E69Ec8FB108DdaB80A8"
+        polybit_liquid_path": "0x31Fa516E3451944c3707efA963e9ADfC58844d09"
+        pancakeswap_factory_address: "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73"
+        verify: False
+    polybit-bsc-fork:
+        weth_address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+        busd_address: "0xe9e7cea3dedca5984780bafc599bd69add087d56"
+        usdt_address: "0x55d398326f99059ff775485246999027b3197955"
+        usdc_address: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
+        pancakeswap_factory_address: "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73"
+        verify: False  
+    polygon-test:
+        verify: False
+    polygon-main:
+        verify: False
+wallets:
+    polybit_owner: ${POLYBIT_OWNER_ADDRESS}
+    polybit_owner_key: ${POLYBIT_OWNER_PRIVATE_KEY}
+    rebalancer_owner: ${REBALANCER_OWNER_ADDRESS}
+    rebalancer_owner_key: ${REBALANCER_OWNER_PRIVATE_KEY}
+    router_owner: ${ROUTER_OWNER_ADDRESS}
+    router_owner_key: ${ROUTER_OWNER_PRIVATE_KEY}
+    wallet_owner_key: ${WALLET_OWNER_PRIVATE_KEY}
+    non_owner_key: ${NON_OWNER_PRIVATE_KEY}
+    polybit_fee: ${POLYBIT_FEE_ADDRESS}
+    polybit_fee_key: ${POLYBIT_FEE_ADDRESS_PRIVATE_KEY}
+    test_polybit_owner: ${TEST_POLYBIT_OWNER_ADDRESS}
+    test_polybit_owner_key: ${TEST_POLYBIT_OWNER_PRIVATE_KEY}
+    test_rebalancer_owner: ${TEST_REBALANCER_OWNER_ADDRESS}
+    test_rebalancer_owner_key: ${TEST_REBALANCER_OWNER_PRIVATE_KEY}
+    test_router_owner: ${TEST_ROUTER_OWNER_ADDRESS}
+    test_router_owner_key: ${TEST_ROUTER_OWNER_PRIVATE_KEY}
+    test_wallet_owner_key: ${TEST_WALLET_OWNER_PRIVATE_KEY}
+    test_non_owner_key: ${TEST_NON_OWNER_PRIVATE_KEY}
+    test_polybit_fee: ${TEST_POLYBIT_FEE_ADDRESS}
+    test_polybit_fee_key: ${TEST_POLYBIT_FEE_PRIVATE_KEY}
+dotenv: .env
+data_providers:
+    coingecko: ${COINGECKO_API_KEY}
+    moralis: ${MORALIS_API_KEY}
