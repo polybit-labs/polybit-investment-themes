@@ -812,7 +812,7 @@ def main():
     ##
     # Set Liquid Path address and contract
     ##
-    polybit_liquid_path_address = "0x31Fa516E3451944c3707efA963e9ADfC58844d09"  # config["networks"][network.show_active()]["polybit_liquid_path"]
+    polybit_liquid_path_address = "0x40a961cd0d9896b59635E48fFCAEf6aDD5b7dE79"  # "0x31Fa516E3451944c3707efA963e9ADfC58844d09"  # config["networks"][network.show_active()]["polybit_liquid_path"]
     path = str(Path(os.path.abspath(os.path.dirname(__file__))))
     f = open(path + "/abis/IPolybitLiquidPath.json")
     IPolybitLiquidPath = json.load(f)
@@ -875,7 +875,7 @@ def main():
         polybit_theme_config.address,
     )
 
-    ##
+    """ ##
     # First Establish/Deposit combo
     ##
 
@@ -938,7 +938,8 @@ def main():
         TEST_THREE_WEIGHTS,
     )
     print("Deposits", theme.getDeposits())
-    print("Total Deposits", theme.getTotalDeposited())
+    print("Total Deposits", theme.getTotalDeposited()) """
+
     """
 
     print(
@@ -987,28 +988,28 @@ def main():
         ),
     ) """
 
-    """ ##
+    ##
     # Print Contract Info for Export
     ##
-    print("router", polybit_router.address)
+    # print("router", polybit_swap_router.address)
     print("rebalancer", polybit_rebalancer.address)
-    print("detf", polybit_detf.address)
-    print("detf_factory", polybit_detf_factory.address)
+    print("theme", polybit_theme.address)
+    print("theme_factory", polybit_theme_factory.address)
     print("config", polybit_theme_config.address)
     print("access", polybit_theme_access.address)
     print("multicall", polybit_multicall.address)
 
-    print("DETF ABI")
-    print(polybit_detf.abi)
+    print("Theme ABI")
+    print(polybit_theme.abi)
 
-    print("DETF Factory ABI")
-    print(polybit_detf_factory.abi)
+    print("Theme Factory ABI")
+    print(polybit_theme_factory.abi)
 
     print("Rebalancer ABI")
     print(polybit_rebalancer.abi)
 
-    print("Router ABI")
-    print(polybit_router.abi)
+    # print("Router ABI")
+    # print(polybit_router.abi)
 
     print("Config ABI")
     print(polybit_theme_config.abi)
@@ -1017,4 +1018,4 @@ def main():
     print(polybit_theme_access.abi)
 
     print("Multicall ABI")
-    print(polybit_multicall.abi) """
+    print(polybit_multicall.abi)

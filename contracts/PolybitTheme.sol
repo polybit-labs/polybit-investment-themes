@@ -126,7 +126,7 @@ contract PolybitTheme {
         rebalance(orderData);
     }
 
-    /* function deposit(
+    function deposit(
         uint256 lockTimestamp,
         SwapOrders[] memory orderData
     ) public payable onlyWalletOwner {
@@ -134,7 +134,7 @@ contract PolybitTheme {
             setTimeLock(lockTimestamp);
         }
         rebalance(orderData);
-    } */
+    }
 
     function checkForDeposits() internal {
         uint256 ethBalance = getEthBalance();

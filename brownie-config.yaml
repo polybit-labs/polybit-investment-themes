@@ -23,6 +23,8 @@ networks:
         busd_address: "0x1F3365d318Dc1C81777B9977F8b466fdd1614FdB"
         usdt_address: "0xfC00cA596A25B1CfF691EA612D007AfAd5C4bC71"
         usdc_address: "0x25Cd00ece2B3Cd1C28b1e3cbe135Ff51F7c40E9d"
+        polybit_swap_router: "0xb248aB8a5DbF40102c605DA57cF2B3E5c5D60916"
+        polybit_liquid_path": "0x40a961cd0d9896b59635E48fFCAEf6aDD5b7dE79"
         pancakeswap_factory_address: "0x1c12836972879e62BD2350987A38577C5b1757c2"
         verify: False
     bsc-main:
